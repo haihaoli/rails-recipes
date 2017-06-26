@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :set_time_zone
   before_action :set_locale
 
   def set_locale
@@ -10,4 +11,11 @@ class ApplicationController < ActionController::Base
 
     I18n.locale = session[:locale] || I18n.default_locale
   end
+
+  def set_time_zone
+    if current_user && current_user.time_zone
+      Time.zone = current_user.time_zone
+    end
+  end
+  
 end
