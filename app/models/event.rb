@@ -5,6 +5,10 @@ class Event < ApplicationRecord
  validates_uniqueness_of :friendly_id
  validates_format_of :friendly_id, :with => /\A[a-z0-9\-]+\z/
 
+ has_many :tickets, :dependent => :destroy
+ accepts_nested_attributes_for :tickets, :allow_destroy => true, :reject_if => :all_blank
+
+
  STATUS = ["draft", "public", "private"]
  validates_inclusion_of :status, :in => STATUS
 
