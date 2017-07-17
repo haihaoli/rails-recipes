@@ -11,10 +11,14 @@ Rails.application.routes.draw do
     resources :events do
       resources :tickets, :controller => "event_tickets"
 
-      collection do
-        post :bulk_update
+        member do
+          post :reorder
+        end
+
+        collection do
+          post :bulk_update
+        end
       end
-    end
     resources :users do
       resource :profile, :controller => "user_profiles"
     end
