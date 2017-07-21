@@ -16,6 +16,9 @@ class Event < ApplicationRecord
 
  belongs_to :category, :optional => true
 
+ include RankedModel
+ ranks :row_order
+
  def to_param
    self.friendly_id
  end
