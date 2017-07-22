@@ -12,7 +12,7 @@ class Admin::EventTicketsController < AdminController
   def create
     @ticket = @event.tickets.new(ticket_params)
     if @ticket.save
-      redirect_to admin_event_tickets_path(@evnet)
+      redirect_to admin_event_tickets_path(@event)
     else
       render "new"
     end
