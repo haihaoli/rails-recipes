@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+<<<<<<< HEAD
+  resources :events
+=======
   resources :events do
     resources :registrations do
       member do
@@ -14,11 +17,20 @@ Rails.application.routes.draw do
       end
     end
   end
+>>>>>>> origin/ch19
 
   resource :user
 
   namespace :admin do
     root "events#index"
+<<<<<<< HEAD
+    resources :events do
+      resources :tickets, :controller => "event_tickets"
+      collection do
+        post :bulk_update
+      end
+    end
+=======
 
     resources :versions do
       post :undo
@@ -36,6 +48,7 @@ Rails.application.routes.draw do
           post :bulk_update
         end
       end
+>>>>>>> origin/ch19
     resources :users do
       resource :profile, :controller => "user_profiles"
     end

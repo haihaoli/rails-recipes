@@ -11,6 +11,10 @@ class Admin::EventsController < AdminController
   def new
     @event = Event.new
     @event.tickets.build
+<<<<<<< HEAD
+    @event.attachments.build
+=======
+>>>>>>> origin/ch19
   end
 
   def create
@@ -25,8 +29,13 @@ class Admin::EventsController < AdminController
 
   def edit
     @event = Event.find_by_friendly_id!(params[:id])
+<<<<<<< HEAD
+    @event.tickets.build if @event.tickets.empty?
+    @event.attachments.build if @event.attachments.empty?
+=======
     @event.tickets.build
     @event.tickets.build if @event.tickets.empty?
+>>>>>>> origin/ch19
   end
 
   def update
@@ -56,6 +65,25 @@ class Admin::EventsController < AdminController
         if event.save
           total += 1
         end
+<<<<<<< HEAD
+      elsif params[:commit] == I18n.t(:bulk_delete)
+        event.destroy
+        total += 1
+      end
+
+    end
+
+    flash[:alert] = "成功完成#{total}笔"
+    redirect_to admin_events_path
+  end
+
+  protected
+
+  def event_params
+    params.require(:event).permit(:name, :logo, :remove_logo, :remove_images, :description, :friendly_id, :status, :category_id, :images => [],
+                                  :tickets_attributes => [:id, :name, :description, :price, :_destroy],
+                                  :attachments_attributes => [:id, :attachment, :description, :_destroy])
+=======
       elsif params[:commit]  == I18n.t(:bulk_delete)
         event.destroy
         total += 1
@@ -82,6 +110,7 @@ class Admin::EventsController < AdminController
   def event_params
     params.require(:event).permit(:name, :description, :friendly_id, :status, :category_id,
                                   :tickets_attributes => [:id, :name, :description, :price, :_destroy])
+>>>>>>> origin/ch19
   end
 
 end

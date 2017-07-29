@@ -7,6 +7,20 @@
     <th>Groups</th>
     <th>Action</th>
   </tr>
+<<<<<<< HEAD
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.email %></td>
+      <td>
+        <% user.groups.each do |g| %>
+          <%= g.name %><br>
+        <% end %>
+      </td>
+      <td><%= link_to "Edit", edit_admin_user_path(user), :class => "btn btn-default" %></td>
+      <td><%= link_to "Edit Profile", edit_admin_user_profile_path(user), :class => "btn btn-default" %></td>
+    </tr>
+=======
   <% @users.each do |u| %>
   <tr>
     <td><%= u.id%></td>
@@ -19,5 +33,6 @@
     <td><%= link_to "Edit", edit_admin_user_path(u), :class => "btn btn-default" %></td>
     <td><%= link_to "Edit Profile", edit_admin_user_profile_path(u), :class => "btn btn-default" %></td>
   </tr>
+>>>>>>> origin/ch19
   <% end %>
 </table>
