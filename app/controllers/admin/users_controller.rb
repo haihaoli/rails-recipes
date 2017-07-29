@@ -24,8 +24,5 @@ class Admin::UsersController < AdminController
     params.require(:user).permit(:email, :group_ids => [])
   end
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/ch19
 end

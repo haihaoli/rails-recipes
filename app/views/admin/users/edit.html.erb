@@ -1,19 +1,10 @@
 <h1>Edit User</h1>
 
 <% if @user.errors.any? %>
-<<<<<<< HEAD
-  <div id="error_explanation">
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-=======
   <div id="error_explanantion">
     <% @user.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
->>>>>>> origin/ch19
   </div>
 <% end %>
 
@@ -36,12 +27,7 @@
 
 <% end %>
 
-<<<<<<< HEAD
-<script>
-  $("#user_group_ids").select2()
-=======
 
 <script>
   $("#user_group_ids").select2( { theme: "bootstrap" } );
->>>>>>> origin/ch19
 </script>

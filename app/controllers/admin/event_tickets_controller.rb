@@ -1,8 +1,4 @@
 class Admin::EventTicketsController < AdminController
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/ch19
   before_action :find_event
 
   def index
@@ -14,13 +10,8 @@ class Admin::EventTicketsController < AdminController
   end
 
   def create
-<<<<<<< HEAD
-    @ticket = @event.tickets.new
-    if @tickets.save(ticket_params)
-=======
     @ticket = @event.tickets.new(ticket_params)
     if @ticket.save
->>>>>>> origin/ch19
       redirect_to admin_event_tickets_path(@event)
     else
       render "new"
@@ -58,8 +49,5 @@ class Admin::EventTicketsController < AdminController
     params.require(:ticket).permit(:name, :price, :description)
   end
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/ch19
 end
