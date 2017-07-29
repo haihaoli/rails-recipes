@@ -42,9 +42,19 @@ gem "devise-i18n"
 gem "select2-rails"
 gem "nested_form_fields"
 gem "bootstrap-datepicker-rails"
+<<<<<<< HEAD
 gem "ckeditor"
 gem "carrierwave"
 gem "mini_magick"
+=======
+gem 'ckeditor'
+gem 'ranked-model'
+gem 'jquery-ui-rails'
+gem 'kaminari'
+gem 'ransack'
+gem 'paper_trail'
+gem 'axlsx_rails'
+>>>>>>> origin/ch19
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

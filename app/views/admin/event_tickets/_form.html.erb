@@ -1,7 +1,13 @@
 <% if @ticket.errors.any? %>
+<<<<<<< HEAD
   <div id="error_explanation">
     <ul>
       <% @tickets.errors.full_messages.each do |msg| %>
+=======
+  <div id="error_expanation">
+    <ul>
+      <% @ticket.errors.full_messages.each do |msg| %>
+>>>>>>> origin/ch19
         <li><%= msg %></li>
       <% end %>
     </ul>

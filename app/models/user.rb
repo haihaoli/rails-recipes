@@ -6,8 +6,13 @@ class User < ApplicationRecord
 
   has_many :memberships
   has_many :groups, :through => :memberships
+<<<<<<< HEAD
 
   has_one :profile
+=======
+  has_one :profile
+  has_many :registrations
+>>>>>>> origin/ch19
 
   accepts_nested_attributes_for :profile
 

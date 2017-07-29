@@ -7,25 +7,42 @@
     <%= f.time_zone_select :time_zone %>
   </div>
 
+<<<<<<< HEAD
 
   <%= f.fields_for :profile do |ff| %>
 
     <div class="from-group">
+=======
+  <%= f.fields_for :profile do |ff| %>
+    <div class="form-group">
+>>>>>>> origin/ch19
       <%= ff.label :legal_name %>
       <%= ff.text_field :legal_name, :class => "form-control" %>
     </div>
 
+<<<<<<< HEAD
     <div class="from-group">
+=======
+    <div class="form-group">
+>>>>>>> origin/ch19
       <%= ff.label :birthday %>
       <%= ff.date_field :birthday, :class => "form-control" %>
     </div>
 
+<<<<<<< HEAD
     <div class="from-group">
+=======
+    <div class="form-group">
+>>>>>>> origin/ch19
       <%= ff.label :location %>
       <%= ff.text_field :location, :class => "form-control" %>
     </div>
 
+<<<<<<< HEAD
     <div class="from-group">
+=======
+    <div class="form-group">
+>>>>>>> origin/ch19
       <%= ff.label :education %>
       <%= ff.text_field :education, :class => "form-control" %>
     </div>
@@ -53,5 +70,9 @@
 <% end %>
 
 <script>
+<<<<<<< HEAD
   $("#user_profile_attributes_birthday").datepicker({ format: "yyyy-mm-dd", language: "<= I18n.locale %>" });
+=======
+  $("#user_profile_attributes_birthday").datepicker({ format:"yyyy-mm-dd", language: "<%= I18n.locale %>" });
+>>>>>>> origin/ch19
 </script>
