@@ -16,8 +16,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN
-<<<<<<< HEAD
-=======
 //= require validator.min
->>>>>>> origin/ch19
 //= require_tree .

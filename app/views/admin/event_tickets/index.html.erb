@@ -1,11 +1,7 @@
 <h1><%= @event.name %> / Tickets </h1>
 
 <p class="text-right">
-<<<<<<< HEAD
-  <%= link_to "New Tickets", new_admin_event_ticket_path(@event), :class => "btn btn-primary" %>
-=======
   <%= link_to "New Ticket", new_admin_event_ticket_path(@event), :class => "btn btn-primary" %>
->>>>>>> origin/ch19
 </p>
 
 <table class="table">
@@ -13,27 +9,16 @@
     <th>Name</th>
     <th>Price</th>
     <th>Description</th>
-<<<<<<< HEAD
-    <th>Action</th>
-=======
     <th>Actions</th>
->>>>>>> origin/ch19
   </tr>
   <% @tickets.each do |ticket| %>
   <tr>
     <td><%= ticket.name %></td>
     <td><%= ticket.price %></td>
-<<<<<<< HEAD
-    <td><%= ticket.description %></td>
-    <td>
-      <%= link_to "Edit", edit_admin_event_ticket_path(@event, ticket), :class => "btn btn-default" %>
-      <%= link_to "Delete", admin_event_ticket_path(@event, ticket), method: :delete, :class => "btn btn-danger", :data => { :confirm => "Are you suer?" } %>
-=======
     <td><%= simple_format ticket.description %></td>
     <td>
       <%= link_to "Edit", edit_admin_event_ticket_path(@event, ticket), :class => "btn btn-default" %>
       <%= link_to "Delete", admin_event_ticket_path(@event, ticket), method: :delete, :data => { comfirm: "Are you suer?" }, :class => "btn btn-danger" %>
->>>>>>> origin/ch19
     </td>
   </tr>
   <% end %>

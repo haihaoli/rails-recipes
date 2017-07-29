@@ -10,29 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170729085354) do
-=======
 ActiveRecord::Schema.define(version: 20170720041221) do
->>>>>>> origin/ch19
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-<<<<<<< HEAD
-
-  create_table "event_attachments", force: :cascade do |t|
-    t.integer  "event_id"
-    t.string   "attachment"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["event_id"], name: "index_event_attachments_on_event_id"
-  end
-=======
->>>>>>> origin/ch19
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -43,12 +27,7 @@ ActiveRecord::Schema.define(version: 20170720041221) do
     t.string   "friendly_id"
     t.string   "status",      default: "draft"
     t.integer  "category_id"
-<<<<<<< HEAD
-    t.string   "logo"
-    t.string   "images"
-=======
     t.integer  "row_order"
->>>>>>> origin/ch19
     t.index ["category_id"], name: "index_events_on_category_id"
     t.index ["friendly_id"], name: "index_events_on_friendly_id", unique: true
     t.index ["row_order"], name: "index_events_on_row_order"
@@ -100,45 +79,6 @@ ActiveRecord::Schema.define(version: 20170720041221) do
     t.index ["ticket_id"], name: "index_registrations_on_ticket_id"
     t.index ["user_id"], name: "index_registrations_on_user_id"
     t.index ["uuid"], name: "index_registrations_on_uuid", unique: true
-  end
-
-  create_table "tickets", force: :cascade do |t|
-    t.integer  "event_id"
-    t.string   "name"
-    t.text     "description"
-    t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["event_id"], name: "index_tickets_on_event_id"
-  end
-
-  create_table "groups", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "memberships", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_memberships_on_group_id"
-    t.index ["user_id"], name: "index_memberships_on_user_id"
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "legal_name"
-    t.date     "birthday"
-    t.string   "location"
-    t.string   "education"
-    t.string   "occupation"
-    t.text     "bio"
-    t.text     "specialty"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "tickets", force: :cascade do |t|
