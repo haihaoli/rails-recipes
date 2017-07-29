@@ -43,6 +43,8 @@ gem "select2-rails"
 gem "nested_form_fields"
 gem "bootstrap-datepicker-rails"
 gem "ckeditor"
+gem "carrierwave"
+gem "mini_magick"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

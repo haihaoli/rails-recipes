@@ -15,6 +15,13 @@ class Event < ApplicationRecord
  has_many :tickets, :dependent => :destroy
  accepts_nested_attributes_for :tickets, :allow_destroy => true, :reject_if => :all_blank
 
+ mount_uploader :logo, EventLogoUploader
+ mount_uploaders :images, EventImageUploader
+ serialize :images, JSON
+
+ has_many :attachments, :class_name => "EventAttachment", :dependent => :destroy
+ accepts_nested_attributes_for :attachments, :allow_destroy => true, :reject_if => :all_blank
+
  def to_param
    self.friendly_id
  end
