@@ -21,7 +21,7 @@ namespace :dev do
   end
 
   task :fake_event_and_registrations => :environment do
-    event = Event.create!( :status => "public", :name => "全栈营 Meetup", :friendly_id => "fullstack-meetup2" )
+    event = Event.create!( :status => "public", :name => "全栈营 Meetup", :friendly_id => "fullstack-meetup" )
     t1 = event.tickets.create!(:name => "Guest", :price => 0 )
     t2 = event.tickets.create!(:name => "VIP 第一期", :price => 199)
     t3 = event.tickets.create!(:name => "VIP 第二期", :price => 199)
@@ -34,7 +34,7 @@ namespace :dev do
                                   :created_at => Time.now - rand(10).days - rand(24).hours )
     end
 
-    puts "Let's visit http://localhost:3000/admin/events/fullstack-meetup2/registrations"
+    puts "Let's visit http://localhost:3000/admin/events/fullstack-meetup/registrations"
   end
 
 end
