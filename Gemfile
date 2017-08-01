@@ -54,6 +54,7 @@ gem 'axlsx_rails'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'premailer-rails'
+gem 'sidekiq'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
