@@ -24,6 +24,14 @@ class Event < ApplicationRecord
  include RankedModel
  ranks :row_order
 
+ mount_uploader :logo, EventLogoUploader
+
+ mount_uploaders :images, EventImageUploader
+ serialize :images, JSON
+
+ has_many :attachments, :class_name => "EventAttachment", :dependent => :destroy
+ accepts_nested_attributes_for :attachments, :allow_destroy => true, :reject_if => :all_blank
+
  def to_param
    self.friendly_id
  end
